@@ -1,7 +1,7 @@
 module.exports = {
     apps: [
         {
-            name: "file-host",
+            name: "ts-starter-template",
             script: "dist/index.js",
             instances: 1,
             autorestart: true,
