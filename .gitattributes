@@ -1,1 +1,2 @@
-ecosystem.config.js linguist-language=ts
+ecosystem.config.js -linguist-detectable
+.env                -linguist-detectable
