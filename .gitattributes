@@ -1,1 +1,1 @@
-*.js export-ignore
+ecosystem.config.js linguist-language=ts
