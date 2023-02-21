@@ -1,0 +1,50 @@
+{
+    "name": "ts-starter-template",
+    "version": "1.0.0",
+    "description": "Simple starter template for typescript projects",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "engines": {
+        "node": ">=18",
+        "yarn": ">=1.22.0"
+    },
+    "author": {
+        "name": "Pepijn van den Broek",
+        "email": "pepijn@vdbroek.dev",
+        "url": "https://vdbroek.dev"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Pepijn98/ts-starter-template.git"
+    },
+    "bugs": {
+        "email": "support@vdbroek.dev",
+        "url": "https://github.com/Pepijn98/ts-starter-template/issues"
+    },
+    "scripts": {
+        "deploy": "pm2 start ecosystem.config.js --env production",
+        "start": "yarn build && cd dist && cross-env NODE_ENV=production node ./index.js",
+        "test": "yarn build && cd dist && cross-env NODE_ENV=development node ./index.js",
+        "dev": "cross-env NODE_ENV=development ts-node ./src/index.ts",
+        "build": "yarn clean-dist && npx tsc",
+        "build-test": "npx tsc --noEmit",
+        "clean": "pwsh -c 'if ((test-path ./node_modules) -and (test-path ./yarn.lock)) { del ./node_modules, ./yarn.lock -r -force }'",
+        "clean-dist": "pwsh -c 'if (test-path ./dist) { del ./dist }'",
+        "lint": "npx eslint --ext .ts ./src",
+        "lint-fix": "npx eslint --ext .ts ./src --fix"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "@evilmartians/lefthook": "^1.2.9",
+        "@types/node": "^18.14.0",
+        "@typescript-eslint/eslint-plugin": "^5.53.0",
+        "@typescript-eslint/parser": "^5.53.0",
+        "cross-env": "^7.0.3",
+        "eslint": "^8.34.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "prettier": "^2.8.4",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5"
+    }
+}
